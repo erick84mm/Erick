@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Setup
 title: "Bruno Marinho"
 
@@ -30,3 +31,6 @@ sass:
 
 
 port: 8989
+=======
+theme: jekyll-theme-slate
+>>>>>>> a71f4eac74f71e66ea8764f8e79a824c8a272959
