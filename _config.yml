@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 # Setup
-title: "Bruno Marinho"
+title: "Erick Mendieta"
 
 # Use absolute URL when not hosting on the root of server
 
@@ -31,6 +31,3 @@ sass:
 
 
 port: 8989
-=======
-theme: jekyll-theme-slate
->>>>>>> a71f4eac74f71e66ea8764f8e79a824c8a272959
