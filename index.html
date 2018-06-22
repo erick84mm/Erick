@@ -1,55 +1,38 @@
 ---
 layout: default
-title: Home
-shownav: true
 ---
+<div id="main">
+  <section>
+    {% for post in site.posts limit:1 %}
+      <header>
+        <h1>{{ post.title }}</h1>
+        <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+      </header>
+      <section>
+        {{ post.content }}
+        <p class="editor-link"><a href="cloudcannon:collections/{{ post.path }}" class="button"><strong>&#9998;</strong> Edit post</a></p>
+      </section>
+    {% endfor %}
+  </section>
 
-
-<section class="selected-writing">
-  <h2>Selected Writing</h2>
-  <h3>“Write drunk, edit sober” &#8212; Ernest Hemingway</h3>
-  <br>
-{% for post in site.categories.blog limit:3 %}
-
-      <span class="pontuation">❝</span><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-      <br>
-      <small>{{ post.date | date_to_string }}</small>
-      <br>
-      <br>
-
-{% endfor %}
-
-  
-
-</section>
-<a href="{{ site.url }}/writing">More</a>
-</span>
-
-<br>
-<br>
-<br>
-
-<section class="selected-works">
-  <h2>Selected Stories</h2>
-  <h3>About startups, people and side projects I had the pleasure to work on.</h3>
-  <br>
-
-
-  {% for work in site.data.works %}
-  <a style="border: transparent 0px;" href="{{ work.url }}" target="_blank"><img style="margin-bottom:10px;" src="{{ work.image }}"></a><br>
-
-  <span class="pontuation">❝</span><a href="{{ work.url }}" target="_blank">{{ work.title }}</a>
-  <br>
-  <small>{{ work.role }}, {{ work.date }}</small>
-  <br>
-  <br>
-  <br>
-  {% endfor %}
-
-
-</section>
-
-<!-- <a href="/works">More</a> -->
-
-
-
+  <section>
+    <div class="row">
+      {% for post in site.posts offset:1 %}
+        <article class="{% cycle '6u', '6u$' %} 12u(small)">
+          <header>
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          </header>
+          <section>
+            {{ post.excerpt }}
+          </section>
+          <footer>
+            <ul class="actions">
+              <li><a href="{{ post.url }}" class="button">Read More</a></li>
+              <li class="editor-link"><a href="cloudcannon:collections/{{ post.path }}" class="button"><strong>&#9998;</strong> Edit post</a></li>
+            </ul>
+          </footer>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</div>
