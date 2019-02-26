@@ -14,7 +14,7 @@ description: > # this means to ignore newlines until "baseurl:"
 author:
   name: Erick Mendieta
   email: erick.mendieta@nlp.c.titech.ac.jp
-  twitter: @erick84mm
+  twitter: erick84mm
 
 # Social details for the jekyll-seo-tag gem
 social:
